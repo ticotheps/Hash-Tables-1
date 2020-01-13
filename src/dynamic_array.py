@@ -4,6 +4,9 @@ class DynamicArray:
         self.capacity = capacity  # How much is currently allocated
         self.storage = [None] * self.capacity
         
+    def __repr__(self):
+        return f"\nCount = {self.count}\nCapacity = {self.capacity}\nStorage = {self.storage}\n"
+        
     def insert(self, index, value):
         if self.count == self.capacity:
             self.resize()
