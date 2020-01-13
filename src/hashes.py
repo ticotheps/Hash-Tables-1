@@ -14,9 +14,9 @@ for _ in range(10):
 print("\n")
   
 for _ in range(10):
-  print(hashlib.sha256(key).hexdigest()) # enable visualization of hash
+  print(hashlib.sha256(key).hexdigest()) # enable visual for hash
 print("\n")
 
 for _ in range(10):
-  print(int(hashlib.sha256(key).hexdigest(), 16)) # enable visualization of 16 digits of hash
+  print(int(hashlib.sha256(key).hexdigest(), 16)) # enable visual for 16 digits of hash
 print("\n")
