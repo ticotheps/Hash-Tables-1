@@ -1,4 +1,5 @@
 import random
+import statistics
 
 def how_many_before_collisions(buckets, loops=1):
   """
@@ -8,6 +9,8 @@ def how_many_before_collisions(buckets, loops=1):
   
   Run `loops` number of times
   """
+  
+  results = []
   
   for _ in range(loops):
     tries = 0
@@ -23,6 +26,11 @@ def how_many_before_collisions(buckets, loops=1):
       else:
         break
       
-    print(f"\nBuckets: {buckets}\nHashes Before Collision: {tries} ({tries / buckets * 100:.1f}%)\n")
+    result = tries / buckets * 100
+    results.append(result)
+      
+    print(f"\nBuckets: {buckets}\nHashes Before Collision: {tries} ({result:.1f}%)\n")
+    print(f"Results: {results}\n")
+    print(f"Average of 'Results' Array: {statistics.mean(results)} hashes before collision\n")
     
 how_many_before_collisions(32, 10)
